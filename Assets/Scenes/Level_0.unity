@@ -134,9 +134,9 @@ GameObject:
   - component: {fileID: 15801824}
   - component: {fileID: 15801823}
   - component: {fileID: 15801822}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor (4)
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -243,9 +243,9 @@ GameObject:
   - component: {fileID: 86010261}
   - component: {fileID: 86010260}
   - component: {fileID: 86010259}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor (6)
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,9 +352,9 @@ GameObject:
   - component: {fileID: 217318807}
   - component: {fileID: 217318806}
   - component: {fileID: 217318805}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor (8)
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -485,8 +485,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
-  m_Material: {fileID: 0}
+  m_GravityScale: 5
+  m_Material: {fileID: 6200000, guid: dfea64e874850494f9aed5ee6922db2b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -594,8 +594,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb499b5d7e6ce434d9cfbd678edab83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lm:
+    serializedVersion: 2
+    m_Bits: 256
   rb: {fileID: 234526292}
-  jumpForce: 750
+  bc: {fileID: 234526294}
+  jumpForce: 19
 --- !u!1 &264935644
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,9 +611,9 @@ GameObject:
   - component: {fileID: 264935647}
   - component: {fileID: 264935646}
   - component: {fileID: 264935645}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor (5)
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -716,9 +720,9 @@ GameObject:
   - component: {fileID: 400514647}
   - component: {fileID: 400514646}
   - component: {fileID: 400514645}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor (1)
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -825,9 +829,9 @@ GameObject:
   - component: {fileID: 411271121}
   - component: {fileID: 411271120}
   - component: {fileID: 411271119}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor (7)
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1017,9 +1021,9 @@ GameObject:
   - component: {fileID: 912137919}
   - component: {fileID: 912137918}
   - component: {fileID: 912137917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1126,9 +1130,9 @@ GameObject:
   - component: {fileID: 1078327924}
   - component: {fileID: 1078327923}
   - component: {fileID: 1078327922}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor (2)
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1235,9 +1239,9 @@ GameObject:
   - component: {fileID: 1106652487}
   - component: {fileID: 1106652486}
   - component: {fileID: 1106652485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor (11)
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1344,9 +1348,9 @@ GameObject:
   - component: {fileID: 1894066092}
   - component: {fileID: 1894066091}
   - component: {fileID: 1894066090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor (3)
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1453,9 +1457,9 @@ GameObject:
   - component: {fileID: 1965857734}
   - component: {fileID: 1965857733}
   - component: {fileID: 1965857732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor (9)
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1562,9 +1566,9 @@ GameObject:
   - component: {fileID: 1992624768}
   - component: {fileID: 1992624767}
   - component: {fileID: 1992624766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor (10)
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

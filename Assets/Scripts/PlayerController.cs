@@ -5,41 +5,45 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private LayerMask lm;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private BoxCollider2D bc;
     [SerializeField] private float jumpForce;
-    private bool jump = false;
     void Start()
     {
         
     }
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += new Vector3(0.1f, 0f, 0f);
+            rb.velocity = new Vector2(5f, rb.velocity.y);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += new Vector3(-0.1f, 0f, 0f);
+            rb.velocity = new Vector2(-5f, rb.velocity.y);
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.D))
         {
-            if (!jump)
-            {
-                rb.AddForce(new Vector2(0f, jumpForce));
-                jump = true;
-            }
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+        if (Input.GetKey(KeyCode.Space)  && IsGrounded())
+        {
+            rb.velocity = Vector2.up * jumpForce;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(sceneName: "TitleScreen");
         }
+        
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private bool IsGrounded()
     {
-        if (collision.gameObject.tag == "Floor")
-        {
-            jump = false;
-        }
+        RaycastHit2D rh = Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, Vector2.down, 0.1f, lm);
+        return rh.collider != null;
     }
 }
