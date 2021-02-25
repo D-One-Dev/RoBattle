@@ -8,7 +8,6 @@ public class BackgroundController : MonoBehaviour
     [SerializeField] private float speed;
     void Start()
     {
-        Debug.Log(GetComponent<SpriteRenderer>().bounds.size.x);
         startPos = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
         QualitySettings.vSyncCount = 1;
