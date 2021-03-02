@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class GameStart : MonoBehaviour
 {
-    void Update()
+    private PlayerInput PI;
+    private void Awake()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            SceneManager.LoadScene(sceneName: "Level_0");
-        }
+        PI = new PlayerInput();
+        PI.Player.Start.performed += context => StartGame();
+    }
+    private void OnEnable()
+    {PI.Enable();}
+    private void OnDisable()
+    {PI.Disable();}
+    private void StartGame()
+    {
+        SceneManager.LoadScene(sceneName: "Level_0");
     }
 }
