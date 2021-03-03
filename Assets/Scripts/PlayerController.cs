@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float direction = PI.Player.Move.ReadValue<float>();
-        Debug.Log(direction);
         Move(direction); 
     }
     private bool IsGrounded()

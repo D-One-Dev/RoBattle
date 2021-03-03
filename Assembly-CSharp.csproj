@@ -61,8 +61,9 @@
     <Compile Include="Assets\Scripts\GameStart.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\PlatformsController.cs" />
     <Compile Include="Assets\Input Actions\PlayerInput.cs" />
+    <Compile Include="Assets\Scripts\PlatformsController.cs" />
+    <Compile Include="Assets\Scripts\EnemyController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
