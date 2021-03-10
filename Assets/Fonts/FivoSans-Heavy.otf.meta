@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: 2cc3539b858eacf4fbe33045cdf00a0e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Fivo Sans
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 764ca3f0a94a3e848993d98af97ff7c4, type: 3}
+  - {fileID: 12800000, guid: 81c4b6050d695ac4cb5eb5fb7c520cbf, type: 3}
+  - {fileID: 12800000, guid: 1284b10697012a1448fb5116172492a9, type: 3}
+  - {fileID: 12800000, guid: ab035c668b412bc47909ded4a702d8f4, type: 3}
+  - {fileID: 12800000, guid: 747ad9d60e55f754c941a1fe56306460, type: 3}
+  - {fileID: 12800000, guid: b6dc88f6a0dc96e4fb5e8e2cf0633ddd, type: 3}
+  - {fileID: 12800000, guid: 0234fb97e491f9848a28539d89e43005, type: 3}
+  - {fileID: 12800000, guid: 61a781f7eb56ef044bcb1abc00b420e3, type: 3}
+  - {fileID: 12800000, guid: 52baf088739c19148928802beeb952c3, type: 3}
+  - {fileID: 12800000, guid: 9bd05b7cdd049ba4a880673c580415f3, type: 3}
+  - {fileID: 12800000, guid: 862f599ddf4a71144925314ed83dfbed, type: 3}
+  - {fileID: 12800000, guid: 591e48ce12f31ad4fafdbc14c024440e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

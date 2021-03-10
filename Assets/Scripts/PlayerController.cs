@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private BoxCollider2D bc;
     [SerializeField] private float jumpForce;
+    [SerializeField] private GameObject hearts;
     private PlayerInput PI;
+    private int HP = 3;
     private void Awake()
     {
         PI = new PlayerInput();
@@ -43,5 +45,13 @@ public class PlayerController : MonoBehaviour
     private void Menu()
     {
         SceneManager.LoadScene(sceneName: "TitleScreen");
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy" && HP > 0)
+        {
+            HP--;
+            hearts.GetComponent<HPController>().HPUpdate(HP);
+        }
     }
 }
