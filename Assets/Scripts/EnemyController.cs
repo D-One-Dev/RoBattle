@@ -17,7 +17,8 @@ public class EnemyController : MonoBehaviour
     }
     void Update()
     {
-        if (coll) Move();    }
+        if (coll) Move();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 8)

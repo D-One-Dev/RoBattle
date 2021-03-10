@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BoxCollider2D bc;
     [SerializeField] private float jumpForce;
     [SerializeField] private GameObject hearts;
+    [SerializeField] private Text deathTxt;
+    public bool isDead = false;
     private PlayerInput PI;
     private int HP = 3;
     private void Awake()
@@ -17,6 +20,7 @@ public class PlayerController : MonoBehaviour
         PI = new PlayerInput();
         PI.Player.Jump.performed += context => Jump();
         PI.Player.Menu.performed += context => Menu();
+        PI.Player.Start.performed += context => Restart();
     }
     private void OnEnable()
     {PI.Enable();}
@@ -25,7 +29,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float direction = PI.Player.Move.ReadValue<float>();
-        Move(direction); 
+        if (!isDead) Move(direction);
+        else rb.velocity = new Vector2(0f, 0f);
     }
     private bool IsGrounded()
     {
@@ -46,12 +51,22 @@ public class PlayerController : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName: "TitleScreen");
     }
+    private void Restart()
+    {
+        if (isDead) SceneManager.LoadScene(sceneName: "Level_0");
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy" && HP > 0)
         {
             HP--;
             hearts.GetComponent<HPController>().HPUpdate(HP);
+        }
+        if (HP == 0)
+        {
+            rb.gravityScale = 0f;
+            bc.enabled = false;
+            deathTxt.GetComponent<DeathTextComtroller>().Death();
         }
     }
 }

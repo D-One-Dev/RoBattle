@@ -6,14 +6,6 @@ public class HPController : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer HP_1, HP_2, HP_3;
     [SerializeField] private Sprite HP_On, HP_Off;
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
-    }
     public void HPUpdate(int hp)
     {
         if (hp == 3)

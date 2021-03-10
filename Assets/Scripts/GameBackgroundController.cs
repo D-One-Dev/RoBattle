@@ -22,7 +22,6 @@ public class GameBackgroundController : MonoBehaviour
         Vector3 deltaMove = camTransform.position - lastCamPos;
         transform.position += deltaMove * parallaxEffect;
         lastCamPos = camTransform.position;
-
         if (Mathf.Abs(camTransform.position.x - transform.position.x) >= textureUnitSizeX)
         {
             float offsetPosX = (camTransform.position.x - transform.position.x) % textureUnitSizeX;
