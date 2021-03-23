@@ -10,8 +10,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private BoxCollider2D bc;
     [SerializeField] private float jumpForce;
-    [SerializeField] private GameObject hearts;
-    [SerializeField] private Text deathTxt;
+    [SerializeField] private GameObject hearts, bullet;
+    [SerializeField] private Text deathTxt, fireTxt;
+    [SerializeField] private Outline fireTxtOL;
     public bool isDead = false;
     private PlayerInput PI;
     private int HP = 3;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
         PI.Player.Jump.performed += context => Jump();
         PI.Player.Menu.performed += context => Menu();
         PI.Player.Start.performed += context => Restart();
+        PI.Player.Fire.performed += context => Attack();
     }
     private void OnEnable()
     {PI.Enable();}
@@ -55,6 +57,13 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead) SceneManager.LoadScene(sceneName: "Level_0");
     }
+    private void Attack()
+    {
+        if (fireTxt.color.a == 255f)
+        {
+            bullet.GetComponent<BulletController>().spawnBullet();
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy" && HP > 0)
@@ -67,6 +76,23 @@ public class PlayerController : MonoBehaviour
             rb.gravityScale = 0f;
             bc.enabled = false;
             deathTxt.GetComponent<DeathTextComtroller>().Death();
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "AttackPlatform")
+        {
+            fireTxt.transform.position = new Vector3(transform.position.x, fireTxt.transform.position.y, fireTxt.transform.position.z);
+            fireTxt.color = new Color(255f, 255f, 255f, 255f);
+            fireTxtOL.effectColor = new Color(0f, 0f, 0f, 255f);
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "AttackPlatform")
+        {
+            fireTxt.color = new Color(255f, 255f, 255f, 0f);
+            fireTxtOL.effectColor = new Color(0f, 0f, 0f, 0f);
         }
     }
 }
