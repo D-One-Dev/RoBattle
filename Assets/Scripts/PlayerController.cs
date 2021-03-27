@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public bool isDead = false;
     private PlayerInput PI;
     private int HP = 3;
+    private float timer;
     private void Awake()
     {
         PI = new PlayerInput();
@@ -28,11 +29,17 @@ public class PlayerController : MonoBehaviour
     {PI.Enable();}
     private void OnDisable()
     {PI.Disable();}
-    void Update()
+    void FixedUpdate()
     {
         float direction = PI.Player.Move.ReadValue<float>();
         if (!isDead) Move(direction);
         else rb.velocity = new Vector2(0f, 0f);
+        if (timer > 0f)
+        {
+            timer -= Time.fixedDeltaTime;
+            fireTxt.color = new Color(255f, 255f, 255f, 0f);
+            fireTxtOL.effectColor = new Color(0f, 0f, 0f, 0f);
+        }
     }
     private bool IsGrounded()
     {
@@ -59,9 +66,10 @@ public class PlayerController : MonoBehaviour
     }
     private void Attack()
     {
-        if (fireTxt.color.a == 255f)
+        if (fireTxt.color.a == 255f && timer <= 0f)
         {
             bullet.GetComponent<BulletController>().spawnBullet();
+            timer = 2f;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -80,7 +88,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "AttackPlatform")
+        if (collision.gameObject.tag == "AttackPlatform" && timer <= 0f)
         {
             fireTxt.transform.position = new Vector3(transform.position.x, fireTxt.transform.position.y, fireTxt.transform.position.z);
             fireTxt.color = new Color(255f, 255f, 255f, 255f);

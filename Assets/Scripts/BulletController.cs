@@ -10,10 +10,6 @@ public class BulletController : MonoBehaviour
     {
         rb.gravityScale = 0f;
     }
-    void Update()
-    {
-        
-    }
     public void spawnBullet()
     {
         transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 2f, 0f);

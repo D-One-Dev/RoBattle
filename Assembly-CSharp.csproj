@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\BackgroundController.cs" />
     <Compile Include="Assets\Scripts\GameBackgroundController.cs" />
+    <Compile Include="Assets\Scripts\BossHeadController.cs" />
     <Compile Include="Assets\Scripts\GameStart.cs" />
     <Compile Include="Assets\Scripts\BulletController.cs" />
     <Compile Include="Assets\Scripts\MenuTextController.cs" />
@@ -67,8 +68,7 @@
     <Compile Include="Assets\Scripts\HPController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Input Actions\PlayerInput.cs" />
-    <Compile Include="Assets\Scripts\PlatformsController.cs" />
-    <Compile Include="Assets\Scripts\BossHeadController.cs" />
+    <Compile Include="Assets\Scripts\BossAttackController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

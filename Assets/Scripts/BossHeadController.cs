@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class BossHeadController : MonoBehaviour
 {
-    [SerializeField] private GameObject mainCam;
-    [SerializeField] private float smooth;
+    [SerializeField] private GameObject mainCam, bossAttack;
+    [SerializeField] private float smooth, headMoveTime, attackTime;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Sprite idle, damage;
     private Vector3 randomMove = Vector3.zero;
     private int randomPlatform = 1, hp = 5;
-    private float timer, posX = 0;
-    void Start()
-    {
-        
-    }
+    private float timer, attackTimer, posX = 0;
     void FixedUpdate()
     {
         if (mainCam.transform.position.x >= 32f)
@@ -25,29 +21,22 @@ public class BossHeadController : MonoBehaviour
         if (transform.position.y <= 6.51f)
         {
             timer += Time.fixedDeltaTime;
+            attackTimer += Time.fixedDeltaTime;
         }
-        if (timer >= 3f)
+        if (timer >= headMoveTime)
         {
             int random = Random.Range(0, 3);
-            while (random == randomPlatform)
-            {
-                random = Random.Range(0, 3);
-            }
+            while (random == randomPlatform) random = Random.Range(0, 3);
             randomPlatform = random;
             timer = 0f;
-            if (randomPlatform == 0)
-            {
-                posX = 26f;
-            }
-            else if (randomPlatform == 1)
-            {
-                posX = 33f;
-            }
-            else if (randomPlatform == 2)
-            {
-                posX = 40f;
-            }
-            
+            if (randomPlatform == 0) posX = 26f;
+            else if (randomPlatform == 1) posX = 33f;
+            else if (randomPlatform == 2) posX = 40f;
+        }
+        if (attackTimer >= attackTime)
+        {
+            bossAttack.GetComponent<BossAttackController>().Attack();
+            attackTimer = 0f;
         }
         if (posX != 0)
         {
@@ -65,17 +54,11 @@ public class BossHeadController : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             collision.gameObject.transform.position = new Vector3(0f, -10f, 0f);
             hp--;
-            if (hp == 0)
-            {
-                Destroy(this.gameObject);
-            }
+            if (hp == 0) Destroy(this.gameObject);
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Bullet")
-        {
-            sr.sprite = idle;
-        }
+        if (collision.gameObject.tag == "Bullet") sr.sprite = idle;
     }
 }
