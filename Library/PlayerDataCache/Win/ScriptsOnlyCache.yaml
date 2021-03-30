@@ -12,6 +12,7 @@ ScriptsOnlyBuild:
     - GameStart
     - HPController
     - MenuTextController
+    - PlayerCombat
     - PlayerController
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -75,29 +76,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12652}
     - Class: 114
-      Script: {instanceID: 13002}
+      Script: {instanceID: 12720}
     - Class: 114
-      Script: {instanceID: 13092}
+      Script: {instanceID: 13004}
     - Class: 114
-      Script: {instanceID: 13552}
+      Script: {instanceID: 13094}
     - Class: 114
-      Script: {instanceID: 13748}
+      Script: {instanceID: 13554}
     - Class: 114
-      Script: {instanceID: 14380}
+      Script: {instanceID: 13750}
     - Class: 114
-      Script: {instanceID: 14996}
+      Script: {instanceID: 14382}
     - Class: 114
-      Script: {instanceID: 15242}
+      Script: {instanceID: 14998}
     - Class: 114
-      Script: {instanceID: 15416}
+      Script: {instanceID: 15244}
     - Class: 114
-      Script: {instanceID: 15598}
+      Script: {instanceID: 15418}
     - Class: 114
-      Script: {instanceID: 15726}
+      Script: {instanceID: 15600}
     - Class: 114
-      Script: {instanceID: 15730}
+      Script: {instanceID: 15728}
     - Class: 114
-      Script: {instanceID: 21184}
+      Script: {instanceID: 15732}
+    - Class: 114
+      Script: {instanceID: 16780}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -138,19 +141,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12180}
     - Class: 114
-      Script: {instanceID: 13092}
+      Script: {instanceID: 13094}
     - Class: 114
-      Script: {instanceID: 13150}
+      Script: {instanceID: 13152}
     - Class: 114
-      Script: {instanceID: 14256}
+      Script: {instanceID: 14258}
     - Class: 114
-      Script: {instanceID: 14682}
+      Script: {instanceID: 14684}
     - Class: 114
-      Script: {instanceID: 14996}
+      Script: {instanceID: 14998}
     - Class: 114
-      Script: {instanceID: 15598}
+      Script: {instanceID: 15600}
     - Class: 114
-      Script: {instanceID: 15726}
+      Script: {instanceID: 15728}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -388,6 +391,12 @@ ScriptsOnlyBuild:
     className: PixelPerfectCamera
   - hash:
       serializedVersion: 2
+      Hash: 349a29f631977e0d310d8cd655eacad4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BossAttackController
+  - hash:
+      serializedVersion: 2
       Hash: 50d893c48b1c02a4b8ede5fe28ff9e85
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.UI
@@ -418,7 +427,7 @@ ScriptsOnlyBuild:
     className: InputSystemUIInputModule
   - hash:
       serializedVersion: 2
-      Hash: 9c2738990a6d87b1e79667954fb54cd7
+      Hash: 7692864f776a68ca4b64e08859fe2aea
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyController
@@ -742,7 +751,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: b1c93e630730436c5eb4b5c9a697003a
+      Hash: 23bbdd2596abab2e1afa3e7cb9f56de7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -886,10 +895,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 349a29f631977e0d310d8cd655eacad4
+      Hash: 4f68b81fe8e5e556e0899c302ef86791
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: BossAttackController
+    className: PlayerCombat
   platform: 5
   scenePathNames:
   - Assets/Scenes/TitleScreen.unity

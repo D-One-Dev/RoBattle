@@ -10,13 +10,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private BoxCollider2D bc;
     [SerializeField] private float jumpForce;
-    [SerializeField] private GameObject hearts, bullet;
+    [SerializeField] private GameObject hearts, bullet, attackPoint;
     [SerializeField] private Text deathTxt, fireTxt;
     [SerializeField] private Outline fireTxtOL;
-    public bool isDead = false;
     private PlayerInput PI;
     private int HP = 3;
-    private float timer;
+    private float timer, invisTimer;
+    public bool isDead = false, isInvis = false;
     private void Awake()
     {
         PI = new PlayerInput();
@@ -40,6 +40,12 @@ public class PlayerController : MonoBehaviour
             fireTxt.color = new Color(255f, 255f, 255f, 0f);
             fireTxtOL.effectColor = new Color(0f, 0f, 0f, 0f);
         }
+        if (invisTimer > 0f)
+        {
+            invisTimer -= Time.fixedDeltaTime;
+            isInvis = true;
+        }
+        else isInvis = false;
     }
     private bool IsGrounded()
     {
@@ -52,8 +58,16 @@ public class PlayerController : MonoBehaviour
     }
     private void Move(float speed)
     {
-        if(speed > 0.5f) rb.velocity = new Vector2(5f, rb.velocity.y);
-        else if (speed < -0.5f) rb.velocity = new Vector2(-5f, rb.velocity.y);
+        if (speed > 0.5f)
+        {
+            rb.velocity = new Vector2(5f, rb.velocity.y);
+            attackPoint.transform.localPosition = new Vector3(1.32f, 0f, 0f);
+        }
+        else if (speed < -0.5f) 
+        {
+            rb.velocity = new Vector2(-5f, rb.velocity.y);
+            attackPoint.transform.localPosition = new Vector3(-1.32f, 0f, 0f);
+        }
         else rb.velocity = new Vector2(0, rb.velocity.y);
     }
     private void Menu()
@@ -71,21 +85,26 @@ public class PlayerController : MonoBehaviour
             bullet.GetComponent<BulletController>().spawnBullet();
             timer = 2f;
         }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy" && HP > 0)
+        else
         {
-            HP--;
-            hearts.GetComponent<HPController>().HPUpdate(HP);
-        }
-        if (HP == 0)
-        {
-            rb.gravityScale = 0f;
-            bc.enabled = false;
-            deathTxt.GetComponent<DeathTextComtroller>().Death();
+            GetComponent<PlayerCombat>().Attack();
         }
     }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+        //if (collision.gameObject.tag == "Enemy" && HP > 0 && isInvis == false)
+        //{
+           // HP--;
+            //hearts.GetComponent<HPController>().HPUpdate(HP);
+            //invisTimer = 2f;
+        //}
+        //if (HP == 0)
+        //{
+            //rb.gravityScale = 0f;
+            //bc.enabled = false;
+            //deathTxt.GetComponent<DeathTextComtroller>().Death();
+        //}
+    //}
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "AttackPlatform" && timer <= 0f)
@@ -93,6 +112,20 @@ public class PlayerController : MonoBehaviour
             fireTxt.transform.position = new Vector3(transform.position.x, fireTxt.transform.position.y, fireTxt.transform.position.z);
             fireTxt.color = new Color(255f, 255f, 255f, 255f);
             fireTxtOL.effectColor = new Color(0f, 0f, 0f, 255f);
+        }
+
+
+        if (collision.gameObject.tag == "Enemy" && HP > 0 && isInvis == false)
+        {
+            HP--;
+            hearts.GetComponent<HPController>().HPUpdate(HP);
+            invisTimer = 2f;
+        }
+        if (HP == 0)
+        {
+            rb.gravityScale = 0f;
+            bc.enabled = false;
+            deathTxt.GetComponent<DeathTextComtroller>().Death();
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
