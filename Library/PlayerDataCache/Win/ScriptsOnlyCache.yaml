@@ -6,11 +6,11 @@ ScriptsOnlyBuild:
     - BossHeadController
     - BulletController
     - CameraController
-    - DeathTextComtroller
+    - DeathTextController
     - EnemyController
     - GameBackgroundController
-    - GameStart
     - HPController
+    - MenuController
     - MenuTextController
     - PlayerCombat
     - PlayerController
@@ -23,6 +23,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.InputSystem.dll:
+    - UnityEngine.InputSystem.InputActionAsset
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
@@ -80,27 +81,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13004}
     - Class: 114
-      Script: {instanceID: 13094}
+      Script: {instanceID: 13098}
     - Class: 114
-      Script: {instanceID: 13554}
+      Script: {instanceID: 13558}
     - Class: 114
-      Script: {instanceID: 13750}
+      Script: {instanceID: 13754}
     - Class: 114
-      Script: {instanceID: 14382}
+      Script: {instanceID: 14386}
     - Class: 114
-      Script: {instanceID: 14998}
+      Script: {instanceID: 15002}
     - Class: 114
-      Script: {instanceID: 15244}
+      Script: {instanceID: 15178}
     - Class: 114
-      Script: {instanceID: 15418}
+      Script: {instanceID: 15250}
     - Class: 114
-      Script: {instanceID: 15600}
+      Script: {instanceID: 15424}
     - Class: 114
-      Script: {instanceID: 15728}
+      Script: {instanceID: 15606}
     - Class: 114
-      Script: {instanceID: 15732}
+      Script: {instanceID: 15734}
     - Class: 114
-      Script: {instanceID: 16780}
+      Script: {instanceID: 15738}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -141,19 +142,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12180}
     - Class: 114
-      Script: {instanceID: 13094}
+      Script: {instanceID: 13098}
     - Class: 114
-      Script: {instanceID: 13152}
+      Script: {instanceID: 13156}
     - Class: 114
-      Script: {instanceID: 14258}
+      Script: {instanceID: 14262}
     - Class: 114
-      Script: {instanceID: 14684}
+      Script: {instanceID: 14688}
     - Class: 114
-      Script: {instanceID: 14998}
+      Script: {instanceID: 15002}
     - Class: 114
-      Script: {instanceID: 15600}
+      Script: {instanceID: 15606}
     - Class: 114
-      Script: {instanceID: 15728}
+      Script: {instanceID: 15734}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -370,7 +371,7 @@ ScriptsOnlyBuild:
       Hash: f248b95a4ae92cb9ed10825765adc927
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: DeathTextComtroller
+    className: DeathTextController
   - hash:
       serializedVersion: 2
       Hash: ef5c43f921427d03730f6ea4c848f07d
@@ -625,10 +626,10 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: f284dc3916eb9e76559fb37567803550
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GameStart
+    className: MenuController
   - hash:
       serializedVersion: 2
       Hash: 295852e83016219fe0ab9a38fc36f74a
@@ -715,7 +716,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: f5d40cd05a1722eb56dd9c90598441e1
+      Hash: 97430aed78386111361e6bed61982b07
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuTextController
@@ -749,6 +750,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: 4f68b81fe8e5e556e0899c302ef86791
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerCombat
   - hash:
       serializedVersion: 2
       Hash: 23bbdd2596abab2e1afa3e7cb9f56de7
@@ -893,12 +900,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 4f68b81fe8e5e556e0899c302ef86791
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerCombat
   platform: 5
   scenePathNames:
   - Assets/Scenes/TitleScreen.unity

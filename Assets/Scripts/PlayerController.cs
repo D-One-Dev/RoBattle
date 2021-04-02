@@ -20,9 +20,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         PI = new PlayerInput();
-        PI.Player.Jump.performed += context => Jump();
+        PI.Player.Use.performed += context => Use();
         PI.Player.Menu.performed += context => Menu();
-        PI.Player.Start.performed += context => Restart();
         PI.Player.Fire.performed += context => Attack();
     }
     private void OnEnable()
@@ -52,9 +51,13 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D rh = Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, Vector2.down, 0.1f, lm);
         return rh.collider != null;
     }
-    private void Jump() 
+    private void Use() 
     {
-        if (IsGrounded()) rb.velocity = Vector2.up * jumpForce;
+        if (isDead) SceneManager.LoadScene(sceneName: "Level_0");
+        else
+        {
+            if (IsGrounded()) rb.velocity = Vector2.up * jumpForce;
+        }
     }
     private void Move(float speed)
     {
@@ -74,10 +77,6 @@ public class PlayerController : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName: "TitleScreen");
     }
-    private void Restart()
-    {
-        if (isDead) SceneManager.LoadScene(sceneName: "Level_0");
-    }
     private void Attack()
     {
         if (fireTxt.color.a == 255f && timer <= 0f)
@@ -90,21 +89,6 @@ public class PlayerController : MonoBehaviour
             GetComponent<PlayerCombat>().Attack();
         }
     }
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-        //if (collision.gameObject.tag == "Enemy" && HP > 0 && isInvis == false)
-        //{
-           // HP--;
-            //hearts.GetComponent<HPController>().HPUpdate(HP);
-            //invisTimer = 2f;
-        //}
-        //if (HP == 0)
-        //{
-            //rb.gravityScale = 0f;
-            //bc.enabled = false;
-            //deathTxt.GetComponent<DeathTextComtroller>().Death();
-        //}
-    //}
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "AttackPlatform" && timer <= 0f)
@@ -123,9 +107,10 @@ public class PlayerController : MonoBehaviour
         }
         if (HP == 0)
         {
+            isDead = true;
             rb.gravityScale = 0f;
             bc.enabled = false;
-            deathTxt.GetComponent<DeathTextComtroller>().Death();
+            deathTxt.GetComponent<DeathTextController>().Death();
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
