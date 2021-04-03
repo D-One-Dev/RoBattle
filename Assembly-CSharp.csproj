@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{2E18584C-1EF3-0894-B61C-8FFD43249B12}</ProjectGuid>
+    <ProjectGuid>{2BB7CCBF-4229-B424-E98D-3AF936C4B898}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -70,6 +70,8 @@
     <Compile Include="Assets\Scripts\HPController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Input Actions\PlayerInput.cs" />
+    <Compile Include="Assets\Scripts\DeathTextComtroller.cs" />
+    <Compile Include="Assets\Scripts\ControlsSceneController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

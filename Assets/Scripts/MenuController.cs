@@ -28,7 +28,7 @@ public class MenuController : MonoBehaviour
         }
         else if (menuString == 1)
         {
-            Debug.Log("Controls");
+            SceneManager.LoadScene(sceneName: "Controls");
         }
     }
     private void MenuUp()
