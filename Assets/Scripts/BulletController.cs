@@ -16,4 +16,13 @@ public class BulletController : MonoBehaviour
         rb.velocity = new Vector2(0f, 0f);
         rb.gravityScale = -1f;
     }
+    private void FixedUpdate()
+    {
+        if (transform.position.y >= 20f)
+        {
+            transform.position = new Vector3(0f, -10f, 0f);
+            rb.gravityScale = 0f;
+            rb.velocity = new Vector2(0f, 0f);
+        }
+    }
 }

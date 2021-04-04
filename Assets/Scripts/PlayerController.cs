@@ -64,12 +64,14 @@ public class PlayerController : MonoBehaviour
         if (speed > 0.5f)
         {
             rb.velocity = new Vector2(5f, rb.velocity.y);
-            attackPoint.transform.localPosition = new Vector3(1.32f, 0f, 0f);
+            //attackPoint.transform.localPosition = new Vector3(1.32f, 0f, 0f);
+            transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
         }
         else if (speed < -0.5f) 
         {
             rb.velocity = new Vector2(-5f, rb.velocity.y);
-            attackPoint.transform.localPosition = new Vector3(-1.32f, 0f, 0f);
+            //attackPoint.transform.localPosition = new Vector3(-1.32f, 0f, 0f);
+            transform.localScale = new Vector3(-1f, transform.localScale.y, transform.localScale.z);
         }
         else rb.velocity = new Vector2(0, rb.velocity.y);
     }
