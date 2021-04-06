@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Input Actions\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\DeathTextComtroller.cs" />
+    <Compile Include="Assets\Scripts\LanguageController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

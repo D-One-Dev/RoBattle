@@ -605,7 +605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &173589500
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2086,8 +2086,9 @@ GameObject:
   - component: {fileID: 799181936}
   - component: {fileID: 799181935}
   - component: {fileID: 799181934}
+  - component: {fileID: 799181938}
   m_Layer: 5
-  m_Name: Text
+  m_Name: You died
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2184,6 +2185,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799181932}
   m_CullTransparentMesh: 0
+--- !u!114 &799181938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799181932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c9280da4a00524cbba2a3adc14e164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt: {fileID: 799181936}
+  TextEng: You died
+  TextRus: "\u0412\u044B \u043F\u043E\u0433\u0438\u0431\u043B\u0438"
 --- !u!1 &881289269
 GameObject:
   m_ObjectHideFlags: 0

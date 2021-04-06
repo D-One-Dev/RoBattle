@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 470, y: 280}
-  m_SizeDelta: {x: -1460, y: -910}
+  m_AnchoredPosition: {x: 600, y: 280}
+  m_SizeDelta: {x: -1400, y: -910}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2542119
 MonoBehaviour:
@@ -433,8 +433,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -35, y: 280}
-  m_SizeDelta: {x: -1470, y: -910}
+  m_AnchoredPosition: {x: 20, y: 280}
+  m_SizeDelta: {x: -1360, y: -910}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &209086953
 MonoBehaviour:
@@ -710,8 +710,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 470, y: 110}
-  m_SizeDelta: {x: -1460, y: -910}
+  m_AnchoredPosition: {x: 600, y: 110}
+  m_SizeDelta: {x: -1400, y: -910}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &497139382
 MonoBehaviour:
@@ -782,6 +782,7 @@ GameObject:
   - component: {fileID: 583084639}
   - component: {fileID: 583084638}
   - component: {fileID: 583084637}
+  - component: {fileID: 583084636}
   m_Layer: 5
   m_Name: Attack
   m_TagString: Untagged
@@ -805,9 +806,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -552.5, y: 110}
-  m_SizeDelta: {x: -1335, y: -910}
+  m_AnchoredPosition: {x: -517.5, y: 110}
+  m_SizeDelta: {x: -1265, y: -910}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &583084636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583084634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c9280da4a00524cbba2a3adc14e164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt: {fileID: 583084638}
+  TextEng: Attack
+  TextRus: "\u0410\u0442\u0430\u043A\u0430"
 --- !u!114 &583084637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1228,8 +1244,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 470, y: -60}
-  m_SizeDelta: {x: -1460, y: -910}
+  m_AnchoredPosition: {x: 600, y: -60}
+  m_SizeDelta: {x: -1400, y: -910}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706722628
 MonoBehaviour:
@@ -1300,6 +1316,7 @@ GameObject:
   - component: {fileID: 921306615}
   - component: {fileID: 921306614}
   - component: {fileID: 921306613}
+  - component: {fileID: 921306612}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -1323,9 +1340,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -552.5, y: -60}
-  m_SizeDelta: {x: -1335, y: -910}
+  m_AnchoredPosition: {x: -517.5, y: -60}
+  m_SizeDelta: {x: -1265, y: -910}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &921306612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921306610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c9280da4a00524cbba2a3adc14e164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt: {fileID: 921306614}
+  TextEng: Back
+  TextRus: "\u041D\u0430\u0437\u0430\u0434"
 --- !u!114 &921306613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1664,8 +1696,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -35, y: 110}
-  m_SizeDelta: {x: -1470, y: -910}
+  m_AnchoredPosition: {x: 20, y: 110}
+  m_SizeDelta: {x: -1360, y: -910}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1065258113
 MonoBehaviour:
@@ -1966,6 +1998,7 @@ GameObject:
   - component: {fileID: 1443405268}
   - component: {fileID: 1443405267}
   - component: {fileID: 1443405266}
+  - component: {fileID: 1443405265}
   m_Layer: 5
   m_Name: Gamepad
   m_TagString: Untagged
@@ -1989,9 +2022,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 470, y: 450}
-  m_SizeDelta: {x: -1460, y: -910}
+  m_AnchoredPosition: {x: 600, y: 450}
+  m_SizeDelta: {x: -1400, y: -910}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1443405265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443405263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c9280da4a00524cbba2a3adc14e164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt: {fileID: 1443405267}
+  TextEng: Gamepad
+  TextRus: "\u0413\u0435\u0439\u043C\u043F\u0430\u0434"
 --- !u!114 &1443405266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2146,8 +2194,9 @@ GameObject:
   - component: {fileID: 1511709803}
   - component: {fileID: 1511709802}
   - component: {fileID: 1511709801}
+  - component: {fileID: 1511709800}
   m_Layer: 5
-  m_Name: Use/jump
+  m_Name: Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2169,9 +2218,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -552.5, y: 280}
-  m_SizeDelta: {x: -1335, y: -910}
+  m_AnchoredPosition: {x: -517.5, y: 280}
+  m_SizeDelta: {x: -1265, y: -910}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1511709800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511709798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c9280da4a00524cbba2a3adc14e164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt: {fileID: 1511709802}
+  TextEng: Jump
+  TextRus: "\u041F\u0440\u044B\u0436\u043E\u043A"
 --- !u!114 &1511709801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2220,7 +2284,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use / Jump
+  m_Text: Jump
 --- !u!222 &1511709803
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3054,8 +3118,9 @@ GameObject:
   - component: {fileID: 1957374443}
   - component: {fileID: 1957374442}
   - component: {fileID: 1957374441}
+  - component: {fileID: 1957374440}
   m_Layer: 5
-  m_Name: Keyboard/gamepad
+  m_Name: Keyboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3077,9 +3142,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -35, y: 450}
-  m_SizeDelta: {x: -1470, y: -910}
+  m_AnchoredPosition: {x: 20, y: 450}
+  m_SizeDelta: {x: -1360, y: -910}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1957374440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957374438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c9280da4a00524cbba2a3adc14e164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt: {fileID: 1957374442}
+  TextEng: Keyboard
+  TextRus: "\u041A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0430"
 --- !u!114 &1957374441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3256,8 +3336,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -35, y: -60}
-  m_SizeDelta: {x: -1470, y: -910}
+  m_AnchoredPosition: {x: 20, y: -60}
+  m_SizeDelta: {x: -1360, y: -910}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2068331755
 MonoBehaviour:

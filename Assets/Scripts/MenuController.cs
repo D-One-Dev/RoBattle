@@ -30,6 +30,16 @@ public class MenuController : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName: "Controls");
         }
+        else if (menuString == 2)
+        {
+            int language = PlayerPrefs.GetInt("Language");
+            if (language == 0)
+            {
+                PlayerPrefs.SetInt("Language", 1);
+            }
+            else PlayerPrefs.SetInt("Language", 0);
+            Debug.Log(PlayerPrefs.GetInt("Language"));
+        }
     }
     private void MenuUp()
     {
