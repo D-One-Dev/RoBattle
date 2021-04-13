@@ -15,16 +15,19 @@ public class BossAttackController : MonoBehaviour
         else if (transform.position.y >= -2.001f && stage == 2) stage = 3;
         if (stage == 1)
         {
+            transform.localScale = new Vector3(2.9f, transform.localScale.y, transform.localScale.z);
             move = Vector3.Lerp(transform.position, new Vector3(transform.position.x, -9f, transform.position.z), smooth * Time.fixedDeltaTime);
             transform.position = move;
         }
         else if (stage == 2)
         {
+            transform.localScale = new Vector3(3f, transform.localScale.y, transform.localScale.z);
             move = Vector3.Lerp(transform.position, new Vector3(transform.position.x, -2f, transform.position.z), smooth * Time.fixedDeltaTime);
             transform.position = move;
         }
         else if (stage == 3)
         {
+            transform.localScale = new Vector3(2.9f, transform.localScale.y, transform.localScale.z);
             move = Vector3.Lerp(transform.position, new Vector3(transform.position.x, -15f, transform.position.z), smooth * Time.fixedDeltaTime);
             transform.position = move;
         }

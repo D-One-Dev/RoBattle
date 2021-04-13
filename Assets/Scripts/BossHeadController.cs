@@ -8,13 +8,23 @@ public class BossHeadController : MonoBehaviour
     [SerializeField] private float smooth, headMoveTime, attackTime;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Sprite idle, damage;
+    [SerializeField] private AudioClip gameMusic, bossMusic;
+    [SerializeField] private AudioSource music;
     private Vector3 randomMove = Vector3.zero;
     private int randomPlatform = 1, hp = 5;
     private float timer, attackTimer, posX = 0;
+    private bool isMusicOn = false;
     void FixedUpdate()
     {
         if (mainCam.transform.position.x >= 32f)
         {
+            if (!isMusicOn)
+            {
+                music.Stop();
+                music.clip = bossMusic;
+                music.Play();
+                isMusicOn = true;
+            }
             Vector3 smoothMove = Vector3.Lerp(transform.position, new Vector3(transform.position.x, 6.5f, transform.position.z), smooth * Time.fixedDeltaTime);
             transform.position = smoothMove;
         }
@@ -54,7 +64,14 @@ public class BossHeadController : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             collision.gameObject.transform.position = new Vector3(0f, -10f, 0f);
             hp--;
-            if (hp == 0) Destroy(this.gameObject);
+            if (hp == 0)
+            {
+                Destroy(this.gameObject);
+                music.Stop();
+                music.clip = gameMusic;
+                music.Play();
+                isMusicOn = false;
+            }
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
