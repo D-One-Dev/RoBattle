@@ -33,12 +33,12 @@ public class MenuController : MonoBehaviour
         else if (menuString == 2)
         {
             int language = PlayerPrefs.GetInt("Language");
-            if (language == 0)
-            {
-                PlayerPrefs.SetInt("Language", 1);
-            }
+            if (language == 0) PlayerPrefs.SetInt("Language", 1);
             else PlayerPrefs.SetInt("Language", 0);
-            Debug.Log(PlayerPrefs.GetInt("Language"));
+        }
+        else if (menuString == 3)
+        {
+            Application.Quit();
         }
     }
     private void MenuUp()
