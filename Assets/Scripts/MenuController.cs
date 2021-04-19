@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    [SerializeField] private GameObject mainText, settingsText, controlsText, volumeText, volumeValueText;
-    [SerializeField] private int menuStringsCount, settingsStringCount, controlsStringCount, volumeStringCount;
+    [SerializeField] private GameObject mainText, settingsText, controlsText, volumeText, volumeValueText, creditsText;
+    [SerializeField] private int menuStringsCount, settingsStringCount, controlsStringCount, creditsStringCount, volumeStringCount;
     [SerializeField] private AudioSource music;
     private PlayerInput PI;
     private int menuList = 0;
@@ -72,6 +72,13 @@ public class MenuController : MonoBehaviour
             else if (menuString == 2)
             {
                 settingsText.SetActive(false);
+                creditsText.SetActive(true);
+                menuList = 4;
+                menuString = 0;
+            }
+            else if (menuString == 3)
+            {
+                settingsText.SetActive(false);
                 mainText.SetActive(true);
                 menuList = 0;
                 menuString = 0;
@@ -119,6 +126,16 @@ public class MenuController : MonoBehaviour
                 menuString = 0;
             }
         }
+        else if (menuList == 4)
+        {
+            if (menuString == 0)
+            {
+                creditsText.SetActive(false);
+                settingsText.SetActive(true);
+                menuList = 1;
+                menuString = 0;
+            }
+        }
     }
     private void MenuUp()
     {
@@ -153,6 +170,13 @@ public class MenuController : MonoBehaviour
         else if (menuList == 3)
         {
             if (menuString < volumeStringCount - 1)
+            {
+                menuString++;
+            }
+        }
+        else if (menuList == 4)
+        {
+            if (menuString < creditsStringCount - 1)
             {
                 menuString++;
             }
