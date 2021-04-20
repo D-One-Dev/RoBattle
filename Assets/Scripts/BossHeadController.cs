@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossHeadController : MonoBehaviour
 {
-    [SerializeField] private GameObject mainCam, bossAttack;
+    [SerializeField] private GameObject mainCam, bossAttack, player, gameEndText;
     [SerializeField] private float smooth, headMoveTime, attackTime;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Sprite idle, damage;
@@ -67,10 +67,13 @@ public class BossHeadController : MonoBehaviour
             if (hp == 0)
             {
                 Destroy(this.gameObject);
+                Destroy(bossAttack.gameObject);
                 music.Stop();
                 music.clip = gameMusic;
                 music.Play();
                 isMusicOn = false;
+                player.GetComponent<PlayerController>().isLevelEnded = true;
+                gameEndText.SetActive(true);
             }
         }
     }

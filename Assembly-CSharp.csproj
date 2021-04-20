@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\BossHeadController.cs" />
     <Compile Include="Assets\Scripts\DeathTextComtroller.cs" />
     <Compile Include="Assets\Scripts\BossAttackController.cs" />
+    <Compile Include="Assets\Scripts\LevelEndController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

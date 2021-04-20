@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private PlayerInput PI;
     private int HP = 3;
     private float timer, invisTimer;
-    public bool isDead = false, isInvis = false;
+    public bool isDead = false, isInvis = false, isLevelEnded = false;
     private void Awake()
     {
         PI = new PlayerInput();
@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     private void Use() 
     {
         if (isDead) SceneManager.LoadScene(sceneName: "Level_0");
+        else if (isLevelEnded) SceneManager.LoadScene(sceneName: "TitleScreen");
         else
         {
             if (IsGrounded()) rb.velocity = Vector2.up * jumpForce;
@@ -61,16 +62,14 @@ public class PlayerController : MonoBehaviour
     }
     private void Move(float speed)
     {
-        if (speed > 0.5f)
+        if (speed > 0.5f && !isLevelEnded)
         {
             rb.velocity = new Vector2(5f, rb.velocity.y);
-            //attackPoint.transform.localPosition = new Vector3(1.32f, 0f, 0f);
             transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
         }
-        else if (speed < -0.5f) 
+        else if (speed < -0.5f && !isLevelEnded) 
         {
             rb.velocity = new Vector2(-5f, rb.velocity.y);
-            //attackPoint.transform.localPosition = new Vector3(-1.32f, 0f, 0f);
             transform.localScale = new Vector3(-1f, transform.localScale.y, transform.localScale.z);
         }
         else rb.velocity = new Vector2(0, rb.velocity.y);
@@ -81,14 +80,17 @@ public class PlayerController : MonoBehaviour
     }
     private void Attack()
     {
-        if (fireTxt.color.a == 255f && timer <= 0f)
+        if (!isDead && !isLevelEnded)
         {
-            bullet.GetComponent<BulletController>().spawnBullet();
-            timer = 2f;
-        }
-        else
-        {
-            GetComponent<PlayerCombat>().Attack();
+            if (fireTxt.color.a == 255f && timer <= 0f)
+            {
+                bullet.GetComponent<BulletController>().spawnBullet();
+                timer = 2f;
+            }
+            else
+            {
+                GetComponent<PlayerCombat>().Attack();
+            }
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
