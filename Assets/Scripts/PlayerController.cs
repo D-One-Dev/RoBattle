@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject hearts, bullet, attackPoint, particles;
     [SerializeField] private Text deathTxt, fireTxt;
     [SerializeField] private Outline fireTxtOL;
+    [SerializeField] private Animator anim;
     private PlayerInput PI;
     private int HP = 3;
     private float timer, invisTimer;
@@ -32,7 +33,18 @@ public class PlayerController : MonoBehaviour
     {
         isOnGround = IsGrounded();
         float direction = PI.Player.Move.ReadValue<float>();
-        if (!isDead) Move(direction);
+        if (isDead) anim.SetBool("IsRunning", false);
+        if (isLevelEnded) anim.SetBool("IsRunning", false);
+        if (!isDead && !isLevelEnded && direction != 0f)
+        {
+            anim.SetBool("IsRunning", true);
+            Move(direction);
+        }
+        else if (!isDead && !isLevelEnded && direction == 0f)
+        {
+            anim.SetBool("IsRunning", false);
+            Move(direction);
+        }
         else rb.velocity = new Vector2(0f, 0f);
         if (timer > 0f)
         {
