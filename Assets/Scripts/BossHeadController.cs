@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossHeadController : MonoBehaviour
 {
-    [SerializeField] private GameObject mainCam, bossAttack, player, gameEndText;
+    [SerializeField] private GameObject mainCam, bossAttack, player, gameEndText, particles;
     [SerializeField] private float smooth, headMoveTime, attackTime;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Sprite idle, damage;
@@ -59,6 +59,8 @@ public class BossHeadController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
+            particles.transform.position = collision.gameObject.transform.position;
+            particles.GetComponent<ParticleSystem>().Play();
             sr.sprite = damage;
             collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;

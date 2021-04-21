@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Sprite idle, attacked;
+    [SerializeField] private GameObject particles;
     private GameObject platform;
     private float speed, direction, endPos, timer;
     private bool coll = false;
@@ -55,6 +56,8 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        particles.transform.position = transform.position;
+        particles.GetComponent<ParticleSystem>().Play();
         timer = 0.1f;
         currentHealth -= damage;
         if (currentHealth <= 0)

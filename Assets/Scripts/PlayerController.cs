@@ -10,13 +10,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private BoxCollider2D bc;
     [SerializeField] private float jumpForce;
-    [SerializeField] private GameObject hearts, bullet, attackPoint;
+    [SerializeField] private GameObject hearts, bullet, attackPoint, particles;
     [SerializeField] private Text deathTxt, fireTxt;
     [SerializeField] private Outline fireTxtOL;
     private PlayerInput PI;
     private int HP = 3;
     private float timer, invisTimer;
-    public bool isDead = false, isInvis = false, isLevelEnded = false;
+    public bool isDead = false, isInvis = false, isLevelEnded = false, isOnGround = false;
     private void Awake()
     {
         PI = new PlayerInput();
@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     {PI.Disable();}
     void FixedUpdate()
     {
+        isOnGround = IsGrounded();
         float direction = PI.Player.Move.ReadValue<float>();
         if (!isDead) Move(direction);
         else rb.velocity = new Vector2(0f, 0f);
@@ -57,7 +58,12 @@ public class PlayerController : MonoBehaviour
         else if (isLevelEnded) SceneManager.LoadScene(sceneName: "TitleScreen");
         else
         {
-            if (IsGrounded()) rb.velocity = Vector2.up * jumpForce;
+            if (IsGrounded())
+            {
+                particles.transform.position = new Vector3(transform.position.x, transform.position.y - 1.7f, transform.position.z);
+                particles.GetComponent<ParticleSystem>().Play();
+                rb.velocity = Vector2.up * jumpForce;
+            }
         }
     }
     private void Move(float speed)
