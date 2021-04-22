@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Sprite idle, attacked;
+    //[SerializeField] private Sprite idle, attacked;
     [SerializeField] private GameObject particles;
     private GameObject platform;
     private float speed, direction, endPos, timer;
@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
         speed = 5;
         direction = 1;
         currentHealth = maxHealth;
-        sr.sprite = idle;
+        //sr.sprite = idle;
     }
     void FixedUpdate()
     {
@@ -26,9 +26,9 @@ public class EnemyController : MonoBehaviour
         if (timer > 0f)
         {
             timer -= Time.deltaTime;
-            sr.sprite = attacked;
+            //sr.sprite = attacked;
         }
-        else sr.sprite = idle;
+        //else sr.sprite = idle;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -45,11 +45,13 @@ public class EnemyController : MonoBehaviour
         {
             speed = -speed;
             direction = -1;
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
         }
         else if (speed < 0 && endPos >= transform.position.x)
         {
             speed = -speed;
             direction = 1;
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
         }
         rb.velocity = new Vector2(speed, 0f);
     }
