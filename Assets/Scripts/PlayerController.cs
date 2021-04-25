@@ -35,12 +35,12 @@ public class PlayerController : MonoBehaviour
         float direction = PI.Player.Move.ReadValue<float>();
         if (isDead) anim.SetBool("IsRunning", false);
         if (isLevelEnded) anim.SetBool("IsRunning", false);
-        if (!isDead && !isLevelEnded && direction != 0f)
+        if (!isDead && direction != 0f)
         {
-            anim.SetBool("IsRunning", true);
+            if(!isLevelEnded) anim.SetBool("IsRunning", true);
             Move(direction);
         }
-        else if (!isDead && !isLevelEnded && direction == 0f)
+        else if (!isDead && direction == 0f)
         {
             anim.SetBool("IsRunning", false);
             Move(direction);
@@ -80,15 +80,19 @@ public class PlayerController : MonoBehaviour
     }
     private void Move(float speed)
     {
-        if (speed > 0.5f && !isLevelEnded)
+        if (!isLevelEnded)
         {
-            rb.velocity = new Vector2(5f, rb.velocity.y);
-            transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
-        }
-        else if (speed < -0.5f && !isLevelEnded) 
-        {
-            rb.velocity = new Vector2(-5f, rb.velocity.y);
-            transform.localScale = new Vector3(-1f, transform.localScale.y, transform.localScale.z);
+            if (speed > 0.5f && !isLevelEnded)
+            {
+                rb.velocity = new Vector2(5f, rb.velocity.y);
+                transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
+            }
+            else if (speed < -0.5f && !isLevelEnded)
+            {
+                rb.velocity = new Vector2(-5f, rb.velocity.y);
+                transform.localScale = new Vector3(-1f, transform.localScale.y, transform.localScale.z);
+            }
+            else rb.velocity = new Vector2(0, rb.velocity.y);
         }
         else rb.velocity = new Vector2(0, rb.velocity.y);
     }
@@ -113,7 +117,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "AttackPlatform" && timer <= 0f)
+        if (collision.gameObject.tag == "AttackPlatform" && timer <= 0f && !isLevelEnded)
         {
             fireTxt.transform.position = new Vector3(transform.position.x, fireTxt.transform.position.y, fireTxt.transform.position.z);
             fireTxt.color = new Color(255f, 255f, 255f, 255f);

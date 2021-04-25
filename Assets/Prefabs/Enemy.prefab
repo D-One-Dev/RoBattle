@@ -147,8 +147,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1537059727283574267}
   particles: {fileID: 0}
+  speed: 3
   sr: {fileID: 1537059727283574265}
-  maxHealth: 3
+  maxHealth: 2
 --- !u!95 &1537059727283574268
 Animator:
   serializedVersion: 3

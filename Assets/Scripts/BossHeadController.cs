@@ -6,12 +6,13 @@ public class BossHeadController : MonoBehaviour
 {
     [SerializeField] private GameObject mainCam, bossAttack, player, gameEndText, particles;
     [SerializeField] private float smooth, headMoveTime, attackTime;
+    [SerializeField] private int hp;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Sprite idle, damage;
     [SerializeField] private AudioClip gameMusic, bossMusic;
     [SerializeField] private AudioSource music;
     private Vector3 randomMove = Vector3.zero;
-    private int randomPlatform = 1, hp = 5;
+    private int randomPlatform = 1;
     private float timer, attackTimer, posX = 0;
     private bool isMusicOn = false;
     void FixedUpdate()

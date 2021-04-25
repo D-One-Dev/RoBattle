@@ -5,20 +5,18 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
-    //[SerializeField] private Sprite idle, attacked;
     [SerializeField] private GameObject particles;
+    [SerializeField] private float speed;
     private GameObject platform;
-    private float speed, direction, endPos, timer;
+    private float direction, endPos, timer;
     private bool coll = false;
     private int currentHealth;
     public SpriteRenderer sr;
     public int maxHealth;
     void Start()
     {
-        speed = 5;
         direction = 1;
         currentHealth = maxHealth;
-        //sr.sprite = idle;
     }
     void FixedUpdate()
     {
@@ -26,9 +24,7 @@ public class EnemyController : MonoBehaviour
         if (timer > 0f)
         {
             timer -= Time.deltaTime;
-            //sr.sprite = attacked;
         }
-        //else sr.sprite = idle;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
