@@ -4,4 +4,4 @@
 # Game code by misharuk05.
 # Graphics by misharuk05.
 # Music by laut1s.
-# The game is still under development.
+# The game is still in development.

@@ -76,7 +76,7 @@ public class BossHeadController : MonoBehaviour
                 music.Play();
                 isMusicOn = false;
                 player.GetComponent<PlayerController>().isLevelEnded = true;
-                gameEndText.SetActive(true);
+                gameEndText.GetComponent<LevelEndController>().showEndText = true;
             }
         }
     }

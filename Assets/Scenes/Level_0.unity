@@ -910,6 +910,7 @@ MonoBehaviour:
   bullet: {fileID: 2034449136}
   attackPoint: {fileID: 940460855}
   particles: {fileID: 1284280465}
+  gameEndTxt: {fileID: 1523788952}
   deathTxt: {fileID: 799181936}
   fireTxt: {fileID: 173589503}
   fireTxtOL: {fileID: 173589502}
@@ -17831,7 +17832,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308064507}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d39747390c735b418eac346035d64a7, type: 3}
   m_Name: 
@@ -17903,13 +17904,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308064507}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85b55aedcbf3fe042ac2e612c7de5955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txt: {fileID: 1308064512}
-  ol: {fileID: 1308064511}
+  txt0: {fileID: 0}
+  txt1: {fileID: 0}
+  txt2: {fileID: 0}
+  ol0: {fileID: 0}
+  ol1: {fileID: 0}
+  ol2: {fileID: 0}
+  showEndText: 0
+  isAnimationEnded: 0
 --- !u!1 &1321884025
 GameObject:
   m_ObjectHideFlags: 0
@@ -17973,7 +17980,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321884025}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d39747390c735b418eac346035d64a7, type: 3}
   m_Name: 
@@ -18045,13 +18052,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321884025}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85b55aedcbf3fe042ac2e612c7de5955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txt: {fileID: 1321884030}
-  ol: {fileID: 1321884029}
+  txt0: {fileID: 0}
+  txt1: {fileID: 0}
+  txt2: {fileID: 0}
+  ol0: {fileID: 0}
+  ol1: {fileID: 0}
+  ol2: {fileID: 0}
+  showEndText: 0
+  isAnimationEnded: 0
 --- !u!1 &1496889311
 GameObject:
   m_ObjectHideFlags: 0
@@ -18198,13 +18211,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1523788953}
+  - component: {fileID: 1523788954}
   m_Layer: 0
   m_Name: Game end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1523788953
 Transform:
   m_ObjectHideFlags: 0
@@ -18222,6 +18236,26 @@ Transform:
   m_Father: {fileID: 357779259}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1523788954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523788952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b55aedcbf3fe042ac2e612c7de5955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt0: {fileID: 2003355461}
+  txt1: {fileID: 1308064512}
+  txt2: {fileID: 1321884030}
+  ol0: {fileID: 2003355460}
+  ol1: {fileID: 1308064511}
+  ol2: {fileID: 1321884029}
+  showEndText: 0
+  isAnimationEnded: 0
 --- !u!1 &1535614435
 GameObject:
   m_ObjectHideFlags: 0
@@ -18842,7 +18876,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003355456}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d39747390c735b418eac346035d64a7, type: 3}
   m_Name: 
@@ -18914,13 +18948,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003355456}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85b55aedcbf3fe042ac2e612c7de5955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txt: {fileID: 2003355461}
-  ol: {fileID: 2003355460}
+  txt0: {fileID: 0}
+  txt1: {fileID: 0}
+  txt2: {fileID: 0}
+  ol0: {fileID: 0}
+  ol1: {fileID: 0}
+  ol2: {fileID: 0}
+  showEndText: 0
+  isAnimationEnded: 0
 --- !u!1 &2034449136
 GameObject:
   m_ObjectHideFlags: 0
@@ -19042,7 +19082,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 95
-  m_Sprite: {fileID: 21300000, guid: 2e278d9e7c0ea5d4188b09cd42710b6e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7bddf99cb2d455946aba224253a74a7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

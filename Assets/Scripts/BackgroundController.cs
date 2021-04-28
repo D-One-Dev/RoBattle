@@ -10,7 +10,6 @@ public class BackgroundController : MonoBehaviour
     {
         startPos = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
-        QualitySettings.vSyncCount = 1;
     }
     void FixedUpdate()
     {

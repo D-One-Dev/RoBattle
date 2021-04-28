@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private BoxCollider2D bc;
     [SerializeField] private float jumpForce;
-    [SerializeField] private GameObject hearts, bullet, attackPoint, particles;
+    [SerializeField] private GameObject hearts, bullet, attackPoint, particles, gameEndTxt;
     [SerializeField] private Text deathTxt, fireTxt;
     [SerializeField] private Outline fireTxtOL;
     [SerializeField] private Animator anim;
@@ -67,8 +67,8 @@ public class PlayerController : MonoBehaviour
     private void Use() 
     {
         if (isDead) SceneManager.LoadScene(sceneName: "Level_0");
-        else if (isLevelEnded) SceneManager.LoadScene(sceneName: "TitleScreen");
-        else
+        else if (isLevelEnded && gameEndTxt.GetComponent<LevelEndController>().isAnimationEnded) SceneManager.LoadScene(sceneName: "TitleScreen");
+        else if(!isLevelEnded)
         {
             if (IsGrounded())
             {
