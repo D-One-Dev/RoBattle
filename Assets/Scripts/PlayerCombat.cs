@@ -7,8 +7,9 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private GameObject attackSprite;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRange = 0.5f, reloadTime;
-    public LayerMask enemyLayers;
     private float timer;
+    public bool isOnBoss;
+    public LayerMask enemyLayers;
 
     private void FixedUpdate()
     {
@@ -19,12 +20,10 @@ public class PlayerCombat : MonoBehaviour
     }
     public void Attack()
     {
-        if (timer <= 0)
+        if (timer <= 0 && !isOnBoss)
         {
             attackSprite.transform.position = attackPoint.position;
             attackSprite.GetComponent<AttackAnimationController>().AnimationPlay();
-            //attackSprite.GetComponent<Animator>().SetBool("animationPlay", true);
-            //attackSprite.GetComponent<Animator>().SetBool("animationPlay", false);
             timer = reloadTime;
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
             foreach (Collider2D enemy in hitEnemies)

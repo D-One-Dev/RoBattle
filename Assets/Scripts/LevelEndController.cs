@@ -27,7 +27,6 @@ public class LevelEndController : MonoBehaviour
             ol1.effectColor = new Color(ol1.effectColor.r, ol1.effectColor.g, ol1.effectColor.b, ol1.effectColor.a + 1f * Time.fixedDeltaTime);
             txt2.color = new Color(txt2.color.r, txt2.color.g, txt2.color.b, txt2.color.a + 1f * Time.fixedDeltaTime);
             ol2.effectColor = new Color(ol2.effectColor.r, ol2.effectColor.g, ol2.effectColor.b, ol2.effectColor.a + 1f * Time.fixedDeltaTime);
-            Debug.Log(txt0.color.a);
         }
         if (txt0.color.a >= 1f) isAnimationEnded = true;
     }

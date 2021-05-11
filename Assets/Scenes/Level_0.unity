@@ -935,6 +935,7 @@ MonoBehaviour:
   attackPoint: {fileID: 940460856}
   attackRange: 0.9
   reloadTime: 1
+  isOnBoss: 0
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -6485,7 +6486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10ecd4ff8b08604197c876a09197c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 234526293}
+  player: {fileID: 234526291}
   smooth: 4
 --- !u!20 &519420031
 Camera:
