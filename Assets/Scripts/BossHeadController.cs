@@ -26,10 +26,10 @@ public class BossHeadController : MonoBehaviour
                 music.Play();
                 isMusicOn = true;
             }
-            Vector3 smoothMove = Vector3.Lerp(transform.position, new Vector3(transform.position.x, 6.5f, transform.position.z), smooth * Time.fixedDeltaTime);
+            Vector3 smoothMove = Vector3.Lerp(transform.position, new Vector3(transform.position.x, 3.5f, transform.position.z), smooth * Time.fixedDeltaTime);
             transform.position = smoothMove;
         }
-        if (transform.position.y <= 6.51f)
+        if (transform.position.y <= 3.51f)
         {
             timer += Time.fixedDeltaTime;
             attackTimer += Time.fixedDeltaTime;
@@ -62,7 +62,6 @@ public class BossHeadController : MonoBehaviour
         {
             particles.transform.position = collision.gameObject.transform.position;
             particles.GetComponent<ParticleSystem>().Play();
-            sr.sprite = damage;
             collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             collision.gameObject.transform.position = new Vector3(0f, -10f, 0f);
@@ -79,9 +78,5 @@ public class BossHeadController : MonoBehaviour
                 gameEndText.GetComponent<LevelEndController>().showEndText = true;
             }
         }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Bullet") sr.sprite = idle;
     }
 }
